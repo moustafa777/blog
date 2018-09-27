@@ -31,6 +31,13 @@ public class Comment implements Serializable {
 	@Embedded
 	private CreationInfo creationInfo;
 
+	public Comment() {
+	}
+
+	public Comment(String text) {
+		this.text = text;
+	}
+
 	public long getId() {
 		return id;
 	}

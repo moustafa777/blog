@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import com.mum.ea.entities.Role;
 
-public interface RoleDAO extends JpaRepository<Role, Integer> {
+public interface RoleDAO extends JpaRepository<Role, Long> {
 	@Query("select r.roleName from Role r, User_Role ur where ur.role_id = r.id and ur.id = :id")
 	public List<String> findRolesName(@Param("id") Long id);
 }
