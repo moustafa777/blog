@@ -2,11 +2,13 @@ package com.mum.ea.blog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
 @ComponentScan(basePackages="com.mum.ea")
+@EntityScan(basePackages = {"com.mum.ea.entities"}) 
 public class BlogApplication {
 
 	public static void main(String[] args) {
