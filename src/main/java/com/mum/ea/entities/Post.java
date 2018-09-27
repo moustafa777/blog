@@ -19,6 +19,11 @@ import javax.persistence.OneToMany;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+/**
+ * 
+ * @author Yahia
+ *
+ */
 @Entity
 public class Post implements Serializable {
 

@@ -9,6 +9,11 @@ import javax.persistence.Embeddable;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+/**
+ * 
+ * @author Yahia
+ *
+ */
 @Embeddable
 public class CreationInfo implements Serializable {
 

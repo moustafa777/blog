@@ -7,6 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import com.mum.ea.entities.Post;
 
+/**
+ * 
+ * @author Yahia
+ *
+ */
 @Repository
 public interface PostDAO extends JpaRepository<Post, Long> {
 

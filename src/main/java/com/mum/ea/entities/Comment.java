@@ -14,6 +14,11 @@ import javax.persistence.ManyToOne;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+/**
+ * 
+ * @author Yahia
+ *
+ */
 @Entity
 public class Comment implements Serializable {
 
