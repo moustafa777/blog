@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -34,16 +35,16 @@ public class User implements Serializable {
 	@OneToMany(mappedBy = "postOwner")
 	private List<Post> posts;
 
-	@ManyToOne
-	@JoinTable(name = "USER_ROLE")
-	Role role;
+	@ManyToMany
+	@JoinTable
+	List<Role> roles;
 
-	public Role getRole() {
-		return role;
+	public List<Role> getRoles() {
+		return roles;
 	}
 
-	public void setRole(Role role) {
-		this.role = role;
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
 	}
 
 	public long getId() {

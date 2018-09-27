@@ -1,12 +1,16 @@
 package com.mum.ea.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -17,9 +21,21 @@ public class Role implements Serializable {
 	private long id;
 	private String roleName;
 	
-	@OneToMany(mappedBy="role")
-	Set<User> users;
+	@ManyToMany(mappedBy ="roles")
+	List<User> users;
 	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public List<User> getUsers() {
+		return users;
+	}
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
 	public long getid() {
 		return id;
 	}

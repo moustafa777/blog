@@ -13,6 +13,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import com.mum.ea.dao.RoleDAO;
 import com.mum.ea.dao.UserDAO;
+import com.mum.ea.entities.Role;
 import com.mum.ea.entities.User;
 
 @Service
@@ -26,7 +27,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-		User appUser = this.appUserDAO.findByUserName(userName);
+	
+		
+		User appUser = appUserDAO.findByUserName(userName);
 
 		if (appUser == null) {
 			System.out.println("User not found! " + userName);
@@ -36,13 +39,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		System.out.println("Found User: " + appUser);
 
 		// [ROLE_USER, ROLE_ADMIN,..]
-		List<String> roleNames = this.appRoleDAO.findRolesName(appUser.getId());
+		List<Role> roles =   appRoleDAO.findRolesName(appUser.getId());
 
 		List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();
-		if (roleNames != null) {
-			for (String role : roleNames) {
+		if (roles != null) {
+			for (Role role : roles) {
 				// ROLE_USER, ROLE_ADMIN,..
-				GrantedAuthority authority = new SimpleGrantedAuthority(role);
+				GrantedAuthority authority = new SimpleGrantedAuthority(role.getRoleName());
 				grantList.add(authority);
 			}
 		}
@@ -51,7 +54,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 				appUser.getUserName(), //
 				appUser.getPassword(), grantList);
 
-		return userDetails;
+		return null;
 	}
 
 }

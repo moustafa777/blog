@@ -13,7 +13,7 @@ public class UserService {
 
 	@Autowired
 	private UserDAO userDAO;
-	public void save(User user) {
+	public void saveUser(User user) {
 		userDAO.save(user);
 		
 	}
