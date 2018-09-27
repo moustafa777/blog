@@ -8,6 +8,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import com.mum.ea.service.UserDetailsServiceImpl;
  
 
 @Configuration
@@ -54,16 +56,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
  
         // Config for Login Form
-        http.authorizeRequests().and().formLogin()//
-                // Submit URL of login page.
-                .loginProcessingUrl("/j_spring_security_check") // Submit URL
-                .loginPage("/login")//
-                .defaultSuccessUrl("/userAccountInfo")//
-                .failureUrl("/login?error=true")//
-                .usernameParameter("username")//
-                .passwordParameter("password")
-                // Config for Logout Page
-                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/logoutSuccessful");
+//        http.authorizeRequests().and().formLogin()//
+//                // Submit URL of login page.
+//                .loginProcessingUrl("/j_spring_security_check") // Submit URL
+//                .loginPage("/login")//
+//                .defaultSuccessUrl("/userAccountInfo")//
+//                .failureUrl("/login?error=true")//
+//                .usernameParameter("username")//
+//                .passwordParameter("password")
+//                // Config for Logout Page
+//                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/logoutSuccessful");
  
     }
 }
