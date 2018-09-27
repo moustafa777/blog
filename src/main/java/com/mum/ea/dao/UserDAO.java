@@ -12,4 +12,5 @@ import com.mum.ea.entities.User;
 public interface UserDAO extends JpaRepository<User, Integer> {
 
 	public User findByUserName(String userName);
+
 }
