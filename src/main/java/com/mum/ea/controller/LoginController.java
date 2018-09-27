@@ -11,9 +11,14 @@ import com.mum.ea.entities.User;
 
 @Controller
 public class LoginController {
-	@RequestMapping(value = {"/login"}, method = RequestMethod.GET)
-	public String login(Model model) {
-		model.addAttribute("user", new User());
+//	@RequestMapping(value = {"/login"}, method = RequestMethod.GET)
+//	public String login(Model model) {
+//		model.addAttribute("user", new User());
+//		return "login";
+//	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String loginPage(Model model) {
 		return "login";
 	}
 
