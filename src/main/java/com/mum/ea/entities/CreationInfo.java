@@ -15,6 +15,14 @@ public class CreationInfo implements Serializable {
 	private LocalDate creationDate;
 	private LocalTime creationTime;
 
+	public CreationInfo() {
+	}
+
+	public CreationInfo(LocalDate creationDate, LocalTime creationTime) {
+		this.creationDate = creationDate;
+		this.creationTime = creationTime;
+	}
+
 	public LocalDate getCreationDate() {
 		return creationDate;
 	}

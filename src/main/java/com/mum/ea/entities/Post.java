@@ -1,9 +1,11 @@
 package com.mum.ea.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,8 +38,8 @@ public class Post implements Serializable {
 	@JoinColumn(name = "owner_id")
 	private User postOwner;
 
-	@OneToMany(mappedBy = "post")
-	private List<Comment> comments;
+	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Comment> comments = new ArrayList<>();
 
 	public long getId() {
 		return id;

@@ -9,7 +9,7 @@ import com.mum.ea.entities.User;
 
 @Repository
 @Transactional
-public interface UserDAO extends JpaRepository<User, Integer> {
+public interface UserDAO extends JpaRepository<User, Long> {
 
 	public User findByUserName(String userName);
 
