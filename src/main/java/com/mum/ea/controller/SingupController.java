@@ -23,9 +23,6 @@ public class SingupController {
 		// validate user existence
 		
 		userService.saveUser(user);
-		
-		
-		
 	}
 	@GetMapping("/test")
 	public void test() {
