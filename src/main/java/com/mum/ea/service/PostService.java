@@ -1,8 +1,15 @@
 package com.mum.ea.service;
 
-import org.springframework.stereotype.Service;
+import com.mum.ea.entities.Post;
 
-@Service
 public interface PostService {
+
+	Post findPost(long id);
+
+	void addPost(Post post);
+
+	void deletePost(Post post);
+
+	void updatePost(Post post);
 
 }
