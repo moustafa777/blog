@@ -54,7 +54,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 				appUser.getUserName(), //
 				appUser.getPassword(), grantList);
 
-		return null;
+		return userDetails;
 	}
 
 }
